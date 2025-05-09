@@ -1,0 +1,27 @@
+class Pilha:
+    def __init__(self):
+        self.itens = []
+
+    def push(self, item):
+        self.itens.append(item)  # Insere no topo
+
+    def pop(self):
+        if not self.esta_vazia():
+            return self.itens.pop()  # Remove do topo
+        return None
+
+    def peek(self):
+        if not self.esta_vazia():
+            return self.itens[-1]  # Consulta o topo
+        return None
+
+    def esta_vazia(self):
+        return len(self.itens) == 0
+
+# Exemplo de uso
+pilha = Pilha()
+pilha.push(10)
+pilha.push(20)
+pilha.push(30)
+print(pilha.pop())  # Saída: 30
+print(pilha.peek()) # Saída: 20
