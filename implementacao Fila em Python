@@ -1,0 +1,27 @@
+class Fila:
+    def __init__(self):
+        self.itens = []
+
+    def enqueue(self, item):
+        self.itens.append(item)  # Insere no final
+
+    def dequeue(self):
+        if not self.esta_vazia():
+            return self.itens.pop(0)  # Remove do início
+        return None
+
+    def peek(self):
+        if not self.esta_vazia():
+            return self.itens[0]  # Consulta o primeiro
+        return None
+
+    def esta_vazia(self):
+        return len(self.itens) == 0
+
+# Exemplo de uso
+fila = Fila()
+fila.enqueue(10)
+fila.enqueue(20)
+fila.enqueue(30)
+print(fila.dequeue())  # Saída: 10
+print(fila.peek())     # Saída: 20
